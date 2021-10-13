@@ -22,3 +22,12 @@ class PCF8591:
       except Exception as e:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
+
+class Joystick:
+  def __init__(self,address):
+    self.bus = smbus.SMBus(1)
+    self.address = address
+  def getX(self,chn):
+    self.bus.read_byte(self.add)
+  def getY(self,chn):
+    self.bus.read_byte(self.add)
